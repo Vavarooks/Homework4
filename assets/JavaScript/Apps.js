@@ -15,7 +15,11 @@ startBtn.addEventListener("click", function(){
   
       if (secondsLeft === 0) {
         clearInterval(timerInterval);
-        alert("Times Up!");
+        var newDiv = document.createElement("div");
+      newDiv.textContent = "Times up!";
+
+      mainEl.appendChild(newDiv);
+;
       }
   
     }, 1000);
