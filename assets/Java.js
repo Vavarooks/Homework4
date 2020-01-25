@@ -2,9 +2,9 @@ var timeEl = document.querySelector(".time");
 
 var mainEl = document.getElementById("main");
 
-var startBtn = document.getElementById("start");
+var startBtn = document.querySelector("#start");
 
-if (startBtn.addEventListener("click")) {
+startBtn.addEventListener("click", function(){
 
   var secondsLeft = 76;
 
@@ -22,9 +22,7 @@ if (startBtn.addEventListener("click")) {
   }
   setTime();
 
-};
-
-
+});
 
 
 var question1 =
