@@ -2,47 +2,60 @@ var timeEl = document.querySelector(".time");
 
 var mainEl = document.getElementById("main");
 
-let q = document.getElementsByClassName("questions");
+var oneBtn = document.getElementById("one");
 
-var secondsLeft = 160;
+var twoBtn = document.getElementById("two");
+
+var threeBtn = document.getElementById("three");
+
+var fourBtn = document.getElementById("four");
+
+var secondsLeft = 76;
 
 function setTime() {
-  var timerInterval = setInterval(function() {
+  var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left.";
 
-    if(secondsLeft === 0) {
+    if (secondsLeft === 0) {
       clearInterval(timerInterval);
       sendMessage();
     }
 
   }, 1000);
 }
-
-// function sendMessage() {
-//   timeEl.textContent = " ";
-
-//   var imgEl = document.createElement("img");
-
-//   imgEl.setAttribute("src", "images/image_1.jpg");
-//   mainEl.appendChild(imgEl);
-
-// }
-
 setTime();
 
+var question1 =
+{
+  title: "Commonly used data types DO NOT include:",
+  choices: ["strings", "booleans", "alerts", "numbers"],
+  answer: "alerts"
+};
 
-var questions = 
-    {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
-    }; 
+var question2 =
+{
+  title: "The condition in an if / else statement is enclosed within ____.",
+  choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+  answer: "parentheses"
+};
+
+var question3 = {
+  title: "What does D&D stand for?",
+  choices: ["Donuts and Drinks", "Darkness and Daggers", "Dungeons and Dragons", "Drums and Didgeridoos"],
+  answer: "Dungeons and Dragons"
+};
+
+var question4 = {
+  title: "What is the correct spelling?",
+  choices: ["pneumonoultramicroscopicsilicovolcanoconiosis", "pneumonoulcanoconiosis", "pneumonoultorliopisoncanoconiosis", "pneumonoulwalteroilipcanoconiosis"],
+  answer: "pneumonoultramicroscopicsilicovolcanoconiosis"
+};
+
+var question5 = {
+  title: "Which of these is the fake name?",
+  choices: ["Digimon", "Regimon", "Pokemon", "Bakugan"],
+  answer: "Regimon",
+};
 
 
-var question =   
-    {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
-    }; 
