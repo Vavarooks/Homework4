@@ -2,7 +2,7 @@ var timeEl = document.querySelector(".time");
 
 var mainEl = document.getElementById("main");
 
-let question = document.getElementsByClassName("questions")
+let q = document.getElementsByClassName("questions");
 
 var secondsLeft = 160;
 
