@@ -4,6 +4,8 @@ var mainEl = document.getElementById("main");
 
 var secondsLeft = 76;
 
+var body = document.body;
+
 function setTime() {
   var timerInterval = setInterval(function () {
     secondsLeft--;
@@ -25,7 +27,7 @@ var json = {
   title: "Quick Random Quiz!",
   showProgressBar: "bottom",
   showTimerPanel: "top",
-  $setTime(){},
+  maxTimeToFinish: 75,
   firstPageIsStarted: true,
   startSurveyText: "Start Quiz",
   pages: [
@@ -104,18 +106,19 @@ var json = {
       ]
     }
   ],
-  completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>"
+  completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>",
+ 
 };
 
-let model= new survey.Model(json);
+let  result ="";
 
 
-survey
-  .onComplete
-  .add(function (result) {
-    document
-      .querySelector('#answerChoice')
-      .textContent = "Result JSON:\n" + JSON.stringify(result.data, null, 3);
-  });
 
-$("#main").Survey({ model: survey });
+body = document.createElement("h1");
+
+document.querySelector('#answerChoice').textContent = "Result JSON:\n" + JSON.stringify(result.data, null, 3);
+
+
+
+mainEl.append(json);
+
