@@ -1,4 +1,20 @@
 # Homework4
+
+In this home work it is a basic quiz website.
+
+I have one HTML, two Java script files and one Css
+
+Html
+  - In the Html it holds H1, and Div tags. there is not much in the main HTML because this homework focuses on the java script.
+
+Java
+  - There are two java script files as I have mentioned
+    ~ Apps: this holds the main functions the the java script that changes the page.
+    ~Java: this holds the questions for the quiz, the choices, and the answers.
+
+CSS
+  - the CSS is a basic blue and has basic fixes for the page.
+
 # Unit 04 Web APIs Homework: Code Quiz
 
 As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment. These assessments are typically a combination of multiple-choice questions and interactive challenges. In this homework assignment, your challenge is to build a code quiz with multiple-choice questions.
