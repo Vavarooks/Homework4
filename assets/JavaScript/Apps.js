@@ -2,9 +2,9 @@ var timeEl = document.querySelector(".time");
 
 var mainEl = document.getElementById("main");
 
-var secondsLeft = 76;
+var choiceEl = document.getElementById("answerChoice")
 
-var body = document.body;
+var secondsLeft = 76;
 
 function setTime() {
   var timerInterval = setInterval(function () {
@@ -23,102 +23,19 @@ function setTime() {
   }, 1000);
 };
 
-var json = {
-  title: "Quick Random Quiz!",
-  showProgressBar: "bottom",
-  showTimerPanel: "top",
-  maxTimeToFinish: 75,
-  firstPageIsStarted: true,
-  startSurveyText: "Start Quiz",
-  pages: [
-    {
-      questions: [
-        {
-          type: "html",
-          html: "You are about to start quiz! <br/>You have to get as many right in as little time as possible!<br/>Please click on <b>'Start Quiz'</b> button when you are ready."
-        }
-      ]
-    }, {
-      questions: [
-        {
-          type: "radiogroup",
-          name: "games",
-          title: "What does D&D stand for?",
-          choices: [
-            "Donuts and Drinks", "Darkness and Daggers", "Dungeons and Dragons", "Drums and Didgeridoos"
-          ],
-          correctAnswer: "Dungeons and Dragons"
-        }
-      ]
-    }, {
-      questions: [
-        {
-          type: "radiogroup",
-          name: "complex",
-          title: "What is the correct spelling?",
-          choicesOrder: "random",
-          choices: [
-            "pneumonoultramicroscopicsilicovolcanoconiosis", "pneumonoulcanoconiosis", "pneumonoultorliopisoncanoconiosis", "pneumonoulwalteroilipcanoconiosis"
-          ],
-          correctAnswer: "pneumonoultramicroscopicsilicovolcanoconiosis"
-        }
-      ]
-    }, {
-      questions: [
-        {
-          type: "radiogroup",
-          name: "fakeName",
-          title: "Which of these is the fake name?",
-          choicesOrder: "random",
-          choices: [
-            "Digimon", "Regimon", "Pokemon", "Bakugan"
-          ],
-          correctAnswer: "Regimon"
-        },
-        {
-          questions: [
-            {
-              type: "radiogroup",
-              name: "boredGames",
-              title: "Which of these is Not a board game?",
-              choicesOrder: "random",
-              choices: [
-                "Uno", "Sorry", "Clue", "Monopoly"
-              ],
-              correctAnswer: "Uno"
-            }
-          ]
-        },
-        {
-          questions: [
-            {
-              type: "radiogroup",
-              name: "englishWords",
-              title: "Which of these is a actual word?",
-              choicesOrder: "random",
-              choices: [
-                "Fliondeso", "Parede", "Shorogyt", "Woebegone"
-              ],
-              correctAnswer: "Woebegone"
-            }
-          ]
-        },
-      ]
-    }
-  ],
-  completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>",
- 
-};
+// let  result ="";
 
-let  result ="";
+console.log(questions[0].title)
 
+// body = document.createElement("h1");
 
+// document.querySelector('#answerChoice').textContent = "Result JSON:\n" + JSON.stringify(json.data, null, 3);
 
-body = document.createElement("h1");
+mainEl.append(questions[0].title);
 
-document.querySelector('#answerChoice').textContent = "Result JSON:\n" + JSON.stringify(result.data, null, 3);
+for (var i = 0; i < questions[0].title[0].choices; i++);
 
+choiceEl.append(questions[0].title[i]);
 
-
-mainEl.append(json);
+// console.log(json);
 
