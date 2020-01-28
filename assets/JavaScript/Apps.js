@@ -9,6 +9,7 @@ let questEl = document.getElementById("quest");
 let secondsLeft = 76;
 
 function setTime() {
+  
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left.";
@@ -18,13 +19,13 @@ function setTime() {
       var newDiv = document.createElement("div");
       newDiv.textContent = "Times up!";
 
-      mainEl.appendChild(newDiv);
+      timeEl.appendChild(newDiv);
       ;
     }
 
   }, 1000);
 };
-
+// console.log (setTime());
 // let  result ="";
 
 console.log(questions[0].title)
@@ -45,6 +46,7 @@ mainEl.append(questions[0].title);
 
 let hidden = " ";
 
+
 choiceEl.append(questions[0].button);
 
 choiceEl.addEventListener('click', function(){
@@ -52,8 +54,11 @@ choiceEl.addEventListener('click', function(){
   mainEl.append(hidden);
 
   questEl.append(questions[1].title);
-  timeEl.append(setTime());
-})
+  // timeEl.append(setTime());
+  console.log(setTime());
+});
+
+
 
 
 // const $button = document.createElement('button');

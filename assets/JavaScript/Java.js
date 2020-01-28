@@ -1,6 +1,6 @@
 let questions = [
   {
-    title: "Welcome to the quiz! Rules are simple, solve as many in as little time as possible! Get one wrong and you lose time, Good Luck!",
+    title: "Welcome to the quiz! Rules are simple, solve questions in as little time as possible! Get one wrong and you get a penalty, Good Luck!",
     button: "Start Quiz"
   }
   ,
