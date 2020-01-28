@@ -44,16 +44,15 @@ mainEl.append(questions[0].title);
 //   $answerChoices.append($p)
 // }
 
-let hidden = " ";
-
-
 choiceEl.append(questions[0].button);
 
 choiceEl.addEventListener('click', function(){
-  choiceEl.append(hidden);
-  mainEl.append(hidden);
+ 
+  $('div').hide();
+  $('p').hide();
 
   questEl.append(questions[1].title);
+  questEl.append(questions[1].ch)
   // timeEl.append(setTime());
   console.log(setTime());
 });

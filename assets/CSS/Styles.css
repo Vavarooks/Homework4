@@ -1,16 +1,25 @@
 h1 {
     background-color: lightblue;
-}
+}    
 
 h2 {
     background-color: lightblue;
+    font-size: 30px;
 }
 
 button {
     background-color: lightblue;
+    font-size: 30px;
 }
 
 div {
     background-color: lightblue;
-    font-size: 20px;
+    font-size: 40px;
+
+}
+
+p {
+    background-color: lightblue;
+    font-size: 50px;
+
 }
