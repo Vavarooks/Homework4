@@ -1,19 +1,19 @@
-const questions = [
+let questions = [
   {
     title: "Welcome to the quiz! Rules are simple, solve as many in as little time as possible! Get one wrong and you lose time, Good Luck!",
     button: "Start Quiz"
   }
   ,
   {
-    title: "Commonly used data types DO NOT include:",
-    choices: ["strings", "booleans", "alerts", "numbers"],
-    answer: "alerts"
+    title: "What word is NOT a onomatopoeia",
+    choices: ["Pow", "Bang", "Punch", "Thwack"],
+    answer: "Punch"
   }
   ,
   {
     title: "Which of these animals do not belong?",
-    choices: ["Tiger", "Lion", "Cheetah", "Linx"],
-    answer: "Linx"
+    choices: ["Leopeard", "Lion", "Cheetah", "Linx"],
+    answer: "Cheetah"
   }
   ,
   {
@@ -30,5 +30,9 @@ const questions = [
     title: "Which of these is the fake name?",
     choices: ["Digimon", "Regimon", "Pokemon", "Bakugan"],
     answer: "Regimon"
+  },
+  {
+    title: `Great work! You got, Correct in, ! If you want to try again just refresh the page!`,
+    score: "Score:"
   }
 ]

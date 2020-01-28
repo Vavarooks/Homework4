@@ -1,10 +1,12 @@
-var timeEl = document.querySelector(".time");
+let timeEl = document.querySelector(".time");
 
-var mainEl = document.getElementById("main");
+let mainEl = document.getElementById("main");
 
-var choiceEl = document.getElementById("answerChoice")
+let choiceEl = document.getElementById("answerChoice");
 
-var secondsLeft = 76;
+let questEl = document.getElementById("quest");
+
+let secondsLeft = 76;
 
 function setTime() {
   var timerInterval = setInterval(function () {
@@ -33,14 +35,27 @@ console.log(questions[0].title)
 
 mainEl.append(questions[0].title);
 
-let $answerChoices = document.getElementById('questions');
+// let $answerChoices = document.getElementById('questions');
 
-for (var i = 0; i < questions[0].title[0].choices; i++) {
-  const $p = createElement('p');
-  $p.textContent = questions[i];
-  $answerChoices.append($p)
-}
+// for (var i = 0; i < questions[0].title[0].choices; i++) {
+//   const $p = createElement('p');
+//   $p.textContent = questions[i];
+//   $answerChoices.append($p)
+// }
+
+let hidden = " ";
 
 choiceEl.append(questions[0].button);
 
+choiceEl.addEventListener('click', function(){
+  choiceEl.append(hidden);
+  mainEl.append(hidden);
 
+  questEl.append(questions[1].title);
+  timeEl.append(setTime());
+})
+
+
+// const $button = document.createElement('button');
+// $button.textContent(questions[0].button);
+// $answerChoices.append($button)
