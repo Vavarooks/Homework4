@@ -1,5 +1,10 @@
 const questions = [
   {
+    title: "Welcome to the quiz! Rules are simple, solve as many in as little time as possible! Get one wrong and you lose time, Good Luck!",
+    button: "Start Quiz"
+  }
+  ,
+  {
     title: "Commonly used data types DO NOT include:",
     choices: ["strings", "booleans", "alerts", "numbers"],
     answer: "alerts"

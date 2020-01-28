@@ -33,9 +33,14 @@ console.log(questions[0].title)
 
 mainEl.append(questions[0].title);
 
-for (var i = 0; i < questions[0].title[0].choices; i++);
+let $answerChoices = document.getElementById('questions');
 
-choiceEl.append(questions[0].title[i]);
+for (var i = 0; i < questions[0].title[0].choices; i++) {
+  const $p = createElement('p');
+  $p.textContent = questions[i];
+  $answerChoices.append($p)
+}
 
-// console.log(json);
+choiceEl.append(questions[0].button);
+
 
