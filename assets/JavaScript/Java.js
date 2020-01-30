@@ -12,8 +12,8 @@ let questions = [
   ,
   {
     title: "Which of these animals do not belong?",
-    choices: ["Leopeard", "Lion", "Cheetah", "Linx"],
-    answer: "Cheetah"
+    choices: ["Leopeard", "Lion", "Lama", "Linx"],
+    answer: "Lama"
   }
   ,
   {
@@ -27,12 +27,8 @@ let questions = [
     answer: "pneumonoultramicroscopicsilicovolcanoconiosis"
   },
   {
-    title: "Which of these is the fake name?",
+    title: "Which of these is was NOT a cartoon?",
     choices: ["Digimon", "Regimon", "Pokemon", "Bakugan"],
     answer: "Regimon"
-  },
-  {
-    title: `Great work! You got, Correct in, ! If you want to try again just refresh the page!`,
-    score: "Score:"
   }
 ]

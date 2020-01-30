@@ -6,6 +6,14 @@ let choiceEl = document.getElementById("answerChoice");
 
 let questEl = document.getElementById("quest");
 
+let buttons = document.getElementById("buttons");
+
+let rightAnswer = 0;
+
+let wrongAnswer = 0;
+
+let questionNum = 0;
+
 let secondsLeft = 76;
 
 function setTime() {
@@ -26,33 +34,67 @@ function setTime() {
   }, 1000);
 };
 
-mainEl.append(questions[0].title);
+mainEl.append(questions[questionNum].title);
 
-choiceEl.append(questions[0].button);
+choiceEl.append(questions[questionNum].button);
 
-choiceEl.addEventListener('click', function () {
+questionNum++;
 
-  $('div').hide();
-  $('p').hide();
+$(`#answerChoice`).on('click', function (event) {
+  event.preventDefault();
+  $('#main').hide();
+  $('#answerChoice').hide();
 
-  let $h1 = document.createElement('h1');
-  $h1.textContent = questions[1].title;
-  questEl.append($h1);
-
-  for (let i = 0; i < questions[1].choices.length; i++) {
-
-
-    var $div = document.createElement("div");
-
-    $div.textContent = questEl.append(questions[1].choices[i]);
-
-    $br = document.createElement("br");
-
-    $br.textContent = questEl.append(" ");
-
-  };
-
-  // timeEl.append(setTime());
+  // let $h1 = document.createElement('h1');
+  // $h1.textContent = questions[questionNum].title;
+  // questEl.append($h1);
+disQuestion();
   console.log(setTime());
+  console.log(questEl);
 });
 
+function disQuestion () {
+  $(`#quest`).text(questions[questionNum].title);
+  $(`#buttons`).empty();
+  for (let i = 0; i < questions[questionNum].choices.length; i++) {
+    $('#buttons').append(`<button class= "choose" data-choice= "${questions[questionNum].choices[i]}"
+data-type='${questions[questionNum].answer}'> ${questions[questionNum].choices[i]} </button>`)
+
+
+  };
+}
+
+$('#buttons').on('click', '.choose', function(event){
+  event.preventDefault();
+  var userChoice = $(this).attr('data-choice');
+  var correctChoice = $(this).attr('data-type');
+
+  alert(userChoice);
+  console.log(correctChoice);
+
+  if (userChoice === correctChoice){
+    alert("corret")
+    rightAnswer ++;
+  }
+  else {
+    alert("wrong")
+    wrongAnswer ++;
+  }
+
+if (questionNum < questions.length -1){
+  questionNum ++;
+  disQuestion();
+}
+else {
+
+  result();
+}
+
+})
+
+function result () {
+  console.log(wrongAnswer);
+  console.log(rightAnswer);
+  $(`#buttons`).empty();
+  $(`#quest`).text(`Great Job! You got ${rightAnswer} right and ${wrongAnswer} wrong. If you want to try again refresh the page.`)
+}
