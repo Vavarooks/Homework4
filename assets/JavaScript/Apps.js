@@ -9,7 +9,7 @@ let questEl = document.getElementById("quest");
 let secondsLeft = 76;
 
 function setTime() {
-  
+
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left.";
@@ -38,21 +38,38 @@ mainEl.append(questions[0].title);
 
 // let $answerChoices = document.getElementById('questions');
 
-// for (var i = 0; i < questions[0].title[0].choices; i++) {
+
 //   const $p = createElement('p');
 //   $p.textContent = questions[i];
 //   $answerChoices.append($p)
 // }
 
+
+
 choiceEl.append(questions[0].button);
 
-choiceEl.addEventListener('click', function(){
- 
+choiceEl.addEventListener('click', function () {
+
   $('div').hide();
   $('p').hide();
 
-  questEl.append(questions[1].title);
-  questEl.append(questions[1].ch)
+  let $h1 = document.createElement('h1');
+  $h1.textContent = questions[1].title;
+  questEl.append($h1);
+
+  for (let i = 0; i < questions[1].choices.length; i++) {
+
+
+    var $div = document.createElement("div");
+
+    $div.textContent = questEl.append(questions[1].choices[i]);
+
+    $br = document.createElement("br");
+
+    $br.textContent = questEl.append(" ");
+
+  }
+
   // timeEl.append(setTime());
   console.log(setTime());
 });
