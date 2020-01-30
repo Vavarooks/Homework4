@@ -11,7 +11,7 @@ In this home work it is a basic quiz website.
 I have one HTML, two Java script files and one Css
 
 Html
-  - In the Html it holds H1, and Div tags. there is not much in the main HTML because this homework focuses on the java script.
+  - In the Html it holds H1, H2, P and Div tags. there is not much in the main HTML because this homework focuses on the java script.
 
 Java
   - There are two java script files as I have mentioned

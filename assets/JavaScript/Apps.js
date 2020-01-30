@@ -25,26 +25,8 @@ function setTime() {
 
   }, 1000);
 };
-// console.log (setTime());
-// let  result ="";
-
-console.log(questions[0].title)
-
-// body = document.createElement("h1");
-
-// document.querySelector('#answerChoice').textContent = "Result JSON:\n" + JSON.stringify(json.data, null, 3);
 
 mainEl.append(questions[0].title);
-
-// let $answerChoices = document.getElementById('questions');
-
-
-//   const $p = createElement('p');
-//   $p.textContent = questions[i];
-//   $answerChoices.append($p)
-// }
-
-
 
 choiceEl.append(questions[0].button);
 
@@ -68,15 +50,9 @@ choiceEl.addEventListener('click', function () {
 
     $br.textContent = questEl.append(" ");
 
-  }
+  };
 
   // timeEl.append(setTime());
   console.log(setTime());
 });
 
-
-
-
-// const $button = document.createElement('button');
-// $button.textContent(questions[0].button);
-// $answerChoices.append($button)

@@ -5,7 +5,7 @@ let questions = [
   }
   ,
   {
-    title: "What word is NOT a onomatopoeia",
+    title: "What word is NOT a onomatopoeia?",
     choices: ["Pow", "Bang", "Punch", "Thwack"],
     answer: "Punch"
   }
