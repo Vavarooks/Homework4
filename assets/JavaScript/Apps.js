@@ -106,7 +106,7 @@ function result() {
   $('.score').show();
 }
 
-$('.score').append(`<textarea class= "scoreShow"> Scores </textarea>`);
+$('.score').append(`<textarea class= "scoreShow">  Initials </textarea>`);
 $('.score').append(`<button class= "scoreBoard"> Submit </button>`);
 
 $(`.scoreBoard`).click(function () {

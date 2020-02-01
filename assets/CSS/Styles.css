@@ -13,6 +13,10 @@ h3 {
     font-size: 30px; 
 }
 
+.scoreShow {
+    background-color: lightblue;
+}
+
 button {
     background-color: lightblue;
     font-size: 30px;
@@ -21,8 +25,6 @@ button {
 #main {
     background-color: lightblue;
     font-size: 30px;
-    
-
 }
 
 p {
