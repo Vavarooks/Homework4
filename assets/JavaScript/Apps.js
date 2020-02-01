@@ -20,6 +20,14 @@ let questionNum = 0;
 
 let secondsLeft = 76;
 
+var initialsEl = JSON.parse(localStorage.getItem("data"));
+
+// var timers = localStorage.getItem("timeStop");
+
+// var rightAnswer = localStorage.getItem("rightChoice");
+
+// var wrongChoice = localStorage.getItem("wrongChoice");
+
 function setTime() {
 
   var timerInterval = setInterval(function () {
@@ -30,7 +38,6 @@ function setTime() {
       clearInterval(timerInterval);
       var newDiv = document.createElement("div");
       newDiv.textContent = "Times up!";
-
       timeEl.appendChild(newDiv);
       ;
     }
@@ -51,12 +58,9 @@ $(`#answerChoice`).on('click', function (event) {
   $('#main').hide();
   $('#answerChoice').hide();
 
-  // let $h1 = document.createElement('h1');
-  // $h1.textContent = questions[questionNum].title;
-  // questEl.append($h1);
   disQuestion();
   console.log(setTime());
-  console.log(questEl);
+
 });
 
 function disQuestion() {
@@ -106,16 +110,33 @@ function result() {
   $('.score').show();
 }
 
-$('.score').append(`<textarea class= "scoreShow">  Initials </textarea>`);
+$('.score').append(`<textarea class= "scoreShow"> Initials Here </textarea>`);
 $('.score').append(`<button class= "scoreBoard"> Submit </button>`);
 
 $(`.scoreBoard`).click(function () {
-  let stuff = $(`.scoreShow`).val();
-  console.log(stuff);
+
+  let initials = $(`.scoreShow`).val();
+
+  console.log(initials);
+  const scorer = {
+    initials,
+    right: rightAnswer,
+    wrong: wrongAnswer,
+    timeLeft: secondsLeft,
+  }
+
+  localStorage.setItem(`data`, JSON.stringify(scorer));
+
+  // localStorage.setItem("initials", initials);
+
+  // // localStorage.setItem("timeStop", timers);
+
+  // localStorage.setItem("right", rightAnswer);
+
+  // localStorage.setItem("wrongChoice", wrongAnswer);
+
 });
 
+$(`.highScore`).text(`High-Score: ${initialsEl.initials} ${initialsEl.right} correct, and ${initialsEl.wrong} inncorrect in ${initialsEl.timeLeft} seconds.`);
 
-
-// $(`.highScore`).text(`High-Score: ${stuff} , ${rightAnswer} correct, and ${wrongAnswer} inncorrect.`);
-
-
+console.log(initialsEl.initials)
