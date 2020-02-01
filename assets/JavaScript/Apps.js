@@ -8,6 +8,8 @@ let questEl = document.getElementById("quest");
 
 let buttons = document.getElementById("buttons");
 
+let scores = document.getElementsByClassName(`score`);
+
 let rightAnswer = 0;
 
 let wrongAnswer = 0;
@@ -33,6 +35,8 @@ function setTime() {
 
   }, 1000);
 };
+
+$('.score').hide();
 
 mainEl.append(questions[questionNum].title);
 
@@ -96,5 +100,22 @@ function result () {
   console.log(wrongAnswer);
   console.log(rightAnswer);
   $(`#buttons`).empty();
-  $(`#quest`).text(`Great Job! You got ${rightAnswer} right and ${wrongAnswer} wrong. If you want to try again refresh the page.`)
+  $(`#quest`).text(`Great Job! You got ${rightAnswer} right and ${wrongAnswer} wrong. If you want to try again refresh the page.`);
+  $('.score').show();
 }
+
+$('.score').append(`<textarea class= "scoreShow"> Scores </textarea>`);
+$('.score').append(`<button class= "scoreBoard"> Submit </button>`);
+
+$(`.scoreBoard`).click(function(){
+let stuff = $(`.scoreShow`).val();
+console.log(stuff);
+});
+
+
+
+
+
+// let sutff = $(`scoreShow`).val();
+
+// 
