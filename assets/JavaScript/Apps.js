@@ -10,6 +10,8 @@ let buttons = document.getElementById("buttons");
 
 let scores = document.getElementsByClassName(`score`);
 
+let highScores = document.getElementsByClassName(`highScore`);
+
 let rightAnswer = 0;
 
 let wrongAnswer = 0;
@@ -52,12 +54,12 @@ $(`#answerChoice`).on('click', function (event) {
   // let $h1 = document.createElement('h1');
   // $h1.textContent = questions[questionNum].title;
   // questEl.append($h1);
-disQuestion();
+  disQuestion();
   console.log(setTime());
   console.log(questEl);
 });
 
-function disQuestion () {
+function disQuestion() {
   $(`#quest`).text(questions[questionNum].title);
   $(`#buttons`).empty();
   for (let i = 0; i < questions[questionNum].choices.length; i++) {
@@ -68,7 +70,7 @@ data-type='${questions[questionNum].answer}'> ${questions[questionNum].choices[i
   };
 }
 
-$('#buttons').on('click', '.choose', function(event){
+$('#buttons').on('click', '.choose', function (event) {
   event.preventDefault();
   var userChoice = $(this).attr('data-choice');
   var correctChoice = $(this).attr('data-type');
@@ -76,27 +78,27 @@ $('#buttons').on('click', '.choose', function(event){
   alert(userChoice);
   console.log(correctChoice);
 
-  if (userChoice === correctChoice){
+  if (userChoice === correctChoice) {
     alert("corret")
-    rightAnswer ++;
+    rightAnswer++;
   }
   else {
     alert("wrong")
-    wrongAnswer ++;
+    wrongAnswer++;
   }
 
-if (questionNum < questions.length -1){
-  questionNum ++;
-  disQuestion();
-}
-else {
+  if (questionNum < questions.length - 1) {
+    questionNum++;
+    disQuestion();
+  }
+  else {
 
-  result();
-}
+    result();
+  }
 
 })
 
-function result () {
+function result() {
   console.log(wrongAnswer);
   console.log(rightAnswer);
   $(`#buttons`).empty();
@@ -107,15 +109,13 @@ function result () {
 $('.score').append(`<textarea class= "scoreShow"> Scores </textarea>`);
 $('.score').append(`<button class= "scoreBoard"> Submit </button>`);
 
-$(`.scoreBoard`).click(function(){
-let stuff = $(`.scoreShow`).val();
-console.log(stuff);
+$(`.scoreBoard`).click(function () {
+  let stuff = $(`.scoreShow`).val();
+  console.log(stuff);
 });
 
 
 
+// $(`.highScore`).text(`High-Score: ${stuff} , ${rightAnswer} correct, and ${wrongAnswer} inncorrect.`);
 
 
-// let sutff = $(`scoreShow`).val();
-
-// 

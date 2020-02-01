@@ -8,6 +8,11 @@ h2 {
     font-size: 30px;
 }
 
+h3 {
+    background-color: lightblue;
+    font-size: 30px; 
+}
+
 button {
     background-color: lightblue;
     font-size: 30px;
