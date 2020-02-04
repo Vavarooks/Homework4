@@ -22,12 +22,6 @@ let secondsLeft = 76;
 
 var initialsEl = JSON.parse(localStorage.getItem("data"));
 
-// var timers = localStorage.getItem("timeStop");
-
-// var rightAnswer = localStorage.getItem("rightChoice");
-
-// var wrongChoice = localStorage.getItem("wrongChoice");
-
 function setTime() {
 
   var timerInterval = setInterval(function () {
@@ -126,14 +120,6 @@ $(`.scoreBoard`).click(function () {
   }
 
   localStorage.setItem(`data`, JSON.stringify(scorer));
-
-  // localStorage.setItem("initials", initials);
-
-  // // localStorage.setItem("timeStop", timers);
-
-  // localStorage.setItem("right", rightAnswer);
-
-  // localStorage.setItem("wrongChoice", wrongAnswer);
 
 });
 
