@@ -77,7 +77,7 @@ $('#buttons').on('click', '.choose', function (event) {
   console.log(correctChoice);
 
   if (userChoice === correctChoice) {
-    alert("corret")
+    alert("correct")
     rightAnswer++;
   }
   else {
