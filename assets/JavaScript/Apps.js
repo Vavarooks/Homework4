@@ -123,6 +123,6 @@ $(`.scoreBoard`).click(function () {
 
 });
 
-$(`.highScore`).text(`High-Score: ${initialsEl.initials} ${initialsEl.right} correct, and ${initialsEl.wrong} inncorrect in ${initialsEl.timeLeft} seconds.`);
+$(`.highScore`).text(`High-Score: ${initialsEl.initials} ${initialsEl.right} correct, and ${initialsEl.wrong} inncorrect with ${initialsEl.timeLeft} seconds left.`);
 
 console.log(initialsEl.initials)
