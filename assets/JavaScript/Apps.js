@@ -22,25 +22,6 @@ let secondsLeft = 76;
 
 var initialsEl = JSON.parse(localStorage.getItem("data"));
 
-function setTime() {
-
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left.";
-
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-      var newDiv = document.createElement("div");
-      newDiv.textContent = "Times up!";
-      timeEl.appendChild(newDiv);
-      ;
-    }
-
-  }, 1000);
-};
-
-$('.score').hide();
-
 mainEl.append(questions[questionNum].title);
 
 choiceEl.append(questions[questionNum].button);
