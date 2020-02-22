@@ -22,6 +22,25 @@ let secondsLeft = 76;
 
 var initialsEl = JSON.parse(localStorage.getItem("data"));
 
+function setTime() {
+
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left.";
+
+    if (secondsLeft <= 0 || questionNum >= questions.length - 1) {
+      clearInterval(timerInterval);
+      var newDiv = document.createElement("div");
+      newDiv.textContent = "Times up!";
+      timeEl.appendChild(newDiv);
+      ;
+    }
+
+  }, 1000);
+};
+
+$('.score').hide();
+
 mainEl.append(questions[questionNum].title);
 
 choiceEl.append(questions[questionNum].button);
@@ -54,15 +73,15 @@ $('#buttons').on('click', '.choose', function (event) {
   var userChoice = $(this).attr('data-choice');
   var correctChoice = $(this).attr('data-type');
 
-  alert(userChoice);
+
   console.log(correctChoice);
 
   if (userChoice === correctChoice) {
-    alert("correct")
+   secondsLeft = secondsLeft + 5
     rightAnswer++;
   }
   else {
-    alert("wrong")
+    secondsLeft = secondsLeft - 5
     wrongAnswer++;
   }
 
@@ -70,10 +89,18 @@ $('#buttons').on('click', '.choose', function (event) {
     questionNum++;
     disQuestion();
   }
+
   else {
 
     result();
   }
+  
+  if(secondsLeft <= 0) {
+
+    result();
+  }
+ 
+  
 
 })
 
@@ -85,7 +112,7 @@ function result() {
   $('.score').show();
 }
 
-$('.score').append(`<textarea class= "scoreShow"> Initials Here </textarea>`);
+$('.score').append(`<textarea class= "scoreShow" placeholder="Initials"></textarea>`);
 $('.score').append(`<button class= "scoreBoard"> Submit </button>`);
 
 $(`.scoreBoard`).click(function () {
